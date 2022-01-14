@@ -1,10 +1,19 @@
 import { TestBed } from '@angular/core/testing';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbCardModule, NbIconModule, NbThemeModule } from '@nebular/theme';
 import { AppComponent } from './app.component';
+import { ColumnComponent } from './column/column.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent]
+      declarations: [AppComponent, ColumnComponent],
+      imports: [
+        NbEvaIconsModule,
+        NbIconModule,
+        NbThemeModule.forRoot(),
+        NbCardModule
+      ]
     }).compileComponents();
   });
 
@@ -12,20 +21,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'planner'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('planner');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'planner app is running!'
-    );
   });
 });
