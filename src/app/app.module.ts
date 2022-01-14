@@ -12,9 +12,9 @@ import { ColumnComponent } from './column/column.component';
     NbEvaIconsModule,
     NbIconModule,
     NbThemeModule.forRoot(),
-    NbCardModule,
+    NbCardModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
